@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Ground
+  - Obstacle
+  - Horda
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Fondo
+  - Cerro
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Cielo capa 1
+    uniqueID: 3548559143
+    locked: 0
+  - name: Capa 6
+    uniqueID: 3425232283
+    locked: 0
+  - name: Capa 5
+    uniqueID: 2769295919
+    locked: 0
+  - name: Capa 4
+    uniqueID: 3952140331
+    locked: 0
+  - name: Capa 3
+    uniqueID: 3867713917
+    locked: 0
+  - name: Capa 2
+    uniqueID: 5106737
+    locked: 0
+  - name: Puente
+    uniqueID: 2899603205
+    locked: 0
+  - name: Player
+    uniqueID: 3080807497
+    locked: 0
+  m_RenderingLayers:
+  - Default
