@@ -8,14 +8,12 @@ public class GeneradorNivel : MonoBehaviour
 	[SerializeField] private float distanciaMinima;
 	[SerializeField] private Transform puntoFinal;
 	[SerializeField] private int cantidadInicial;
-
 	private Transform jugador;
 	private bool generando = false;
 
 	private void Start()
 	{
 		jugador = GameObject.FindGameObjectWithTag("Player").transform;
-
 		for (int i = 0; i < cantidadInicial; i++)
 		{
 			GenerarParteNivel();
@@ -25,7 +23,6 @@ public class GeneradorNivel : MonoBehaviour
 	private void Update()
 	{
 		if (generando) return;
-
 		if ((jugador.position - puntoFinal.position).sqrMagnitude < distanciaMinima * distanciaMinima)
 		{
 			generando = true;
@@ -38,9 +35,7 @@ public class GeneradorNivel : MonoBehaviour
 	{
 		int numeroAleatorio = Random.Range(0, partesNivel.Length);
 		GameObject nivel = Instantiate(partesNivel[numeroAleatorio], puntoFinal.position, Quaternion.identity);
-
 		Transform nuevoPunto = BuscarPuntoFinal(nivel, "PuntoFinal");
-
 		if (nuevoPunto != null)
 			puntoFinal = nuevoPunto;
 		else
@@ -54,7 +49,6 @@ public class GeneradorNivel : MonoBehaviour
 			if (ubicacion.CompareTag(etiqueta))
 				return ubicacion;
 		}
-
 		Debug.LogWarning($"El prefab '{parteNivel.name}' no tiene un objeto con tag '{etiqueta}' en ningún nivel.");
 		return null;
 	}
