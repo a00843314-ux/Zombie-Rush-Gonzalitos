@@ -7,11 +7,13 @@ TagManager:
   - Ground
   - Obstacle
   - Horda
+  - PuntoFinal
+  - RecibirDano
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - suelo
   - Water
   - UI
   - Fondo
