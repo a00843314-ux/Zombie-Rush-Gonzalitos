@@ -1,0 +1,454 @@
+fileFormatVersion: 2
+guid: 6a11b81a13cad9142a548100b0f9e690
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2579286331994813360
+    second: Balaanimacion_0
+  - first:
+      213: 1588174721858726310
+    second: Balaanimacion_1
+  - first:
+      213: 1780442080901270520
+    second: Balaanimacion_2
+  - first:
+      213: -3711027410691209306
+    second: Balaanimacion_3
+  - first:
+      213: -2803334669941883532
+    second: Balaanimacion_4
+  - first:
+      213: 1645698111498836935
+    second: Balaanimacion_5
+  - first:
+      213: -6160462574101804373
+    second: Balaanimacion_6
+  - first:
+      213: 8056798414458993900
+    second: Balaanimacion_7
+  - first:
+      213: 3609569989356793985
+    second: Balaanimacion_8
+  - first:
+      213: -4445461647788445871
+    second: Balaanimacion_9
+  - first:
+      213: 3618058301144120878
+    second: Balaanimacion_10
+  - first:
+      213: -9146201832320948413
+    second: Balaanimacion_11
+  - first:
+      213: -4477414168046853422
+    second: Balaanimacion_12
+  - first:
+      213: 8626872461148618693
+    second: Balaanimacion_13
+  - first:
+      213: -5568271813513924598
+    second: Balaanimacion_14
+  - first:
+      213: -3635873393989095197
+    second: Balaanimacion_15
+  - first:
+      213: -1619269550137953604
+    second: Balaanimacion_16
+  - first:
+      213: -4785750516453270107
+    second: Balaanimacion_17
+  - first:
+      213: 1199699785919787196
+    second: Balaanimacion_18
+  - first:
+      213: 5835304899799792443
+    second: Balaanimacion_19
+  - first:
+      213: -8178549040890551938
+    second: Balaanimacion_20
+  - first:
+      213: -7884148299847775205
+    second: Balaanimacion_21
+  - first:
+      213: 5396786207708273099
+    second: Balaanimacion_22
+  - first:
+      213: 1027594831479670655
+    second: Balaanimacion_23
+  - first:
+      213: 4480286537849741023
+    second: Balaanimacion_24
+  - first:
+      213: 3300056790642617541
+    second: Balaanimacion_25
+  - first:
+      213: -1738953779540421275
+    second: Balaanimacion_26
+  - first:
+      213: 4064023637390623125
+    second: Balaanimacion_27
+  - first:
+      213: -2240065194779679781
+    second: Balaanimacion_28
+  - first:
+      213: -5010129439746195427
+    second: Balaanimacion_29
+  - first:
+      213: 5923287965476197198
+    second: Balaanimacion_30
+  - first:
+      213: -5638790087642765208
+    second: Balaanimacion_31
+  - first:
+      213: -4745451876122196597
+    second: Balaanimacion_32
+  - first:
+      213: 2435604810644358007
+    second: Balaanimacion_33
+  - first:
+      213: -5366635542926105672
+    second: Balaanimacion_34
+  - first:
+      213: 9211328539786924931
+    second: Balaanimacion_35
+  - first:
+      213: 762075246358196634
+    second: Balaanimacion_36
+  - first:
+      213: -8788365131441128070
+    second: Balaanimacion_37
+  - first:
+      213: -7041186389711719341
+    second: Balaanimacion_38
+  - first:
+      213: 1661665613952650272
+    second: Balaanimacion_39
+  - first:
+      213: -2233857761941581531
+    second: Balaanimacion_40
+  - first:
+      213: -8825618711539884366
+    second: Balaanimacion_41
+  - first:
+      213: 3471173583648497081
+    second: Balaanimacion_42
+  - first:
+      213: 3294623142984817782
+    second: Balaanimacion_43
+  - first:
+      213: -8251509130631107905
+    second: Balaanimacion_44
+  - first:
+      213: 5841105956920971861
+    second: Balaanimacion_45
+  - first:
+      213: 5158477123212130262
+    second: Balaanimacion_46
+  - first:
+      213: 1980966824985866970
+    second: Balaanimacion_47
+  - first:
+      213: 8009675835875800872
+    second: Balaanimacion_48
+  - first:
+      213: -4458975198444321434
+    second: Balaanimacion_49
+  - first:
+      213: 2519928461425762638
+    second: Balaanimacion_50
+  - first:
+      213: 8936701434193642291
+    second: Balaanimacion_51
+  - first:
+      213: -8148093875718075340
+    second: Balaanimacion_52
+  - first:
+      213: -6566626755584453330
+    second: Balaanimacion_53
+  - first:
+      213: 5151607193653142206
+    second: Balaanimacion_54
+  - first:
+      213: 1225398308165811803
+    second: Balaanimacion_55
+  - first:
+      213: 4968178591310193295
+    second: Balaanimacion_56
+  - first:
+      213: 8526898755446753482
+    second: Balaanimacion_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Balaanimacion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2772
+        width: 2684
+        height: 1386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05ccd672fb8843cd0800000000000000
+      internalID: -2579286331994813360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balaanimacion_1
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 2772
+        width: 2684
+        height: 1386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9e4a9be745a0610800000000000000
+      internalID: 1588174721858726310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balaanimacion_2
+      rect:
+        serializedVersion: 2
+        x: 5368
+        y: 2772
+        width: 2684
+        height: 1386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb074fa3a665b810800000000000000
+      internalID: 1780442080901270520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balaanimacion_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1386
+        width: 2684
+        height: 1386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7430a5b38cf7cc0800000000000000
+      internalID: -3711027410691209306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balaanimacion_4
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 1386
+        width: 2684
+        height: 1386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47db39b68fd8819d0800000000000000
+      internalID: -2803334669941883532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balaanimacion_5
+      rect:
+        serializedVersion: 2
+        x: 5368
+        y: 1386
+        width: 2684
+        height: 1386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb5b6f86b1b6d610800000000000000
+      internalID: 1645698111498836935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balaanimacion_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2684
+        height: 1386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baac29aade3a18aa0800000000000000
+      internalID: -6160462574101804373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fa415f4dec3481f4c80e80d08dbeb475
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":2684.0,"y":1386.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Balaanimacion_0: -2579286331994813360
+      Balaanimacion_1: 1588174721858726310
+      Balaanimacion_2: 1780442080901270520
+      Balaanimacion_3: -3711027410691209306
+      Balaanimacion_4: -2803334669941883532
+      Balaanimacion_5: 1645698111498836935
+      Balaanimacion_6: -6160462574101804373
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
