@@ -3,51 +3,47 @@
 public class Enemigo : MonoBehaviour
 {
 	[Header("Seguimiento")]
-	public float velocidad        = 4f;   // velocidad base del enemigo
-	public float distanciaDetras  = 5f;   // cuanto se queda atras del player normalmente
-	public float velocidadAlcance = 15f;  // velocidad cuando va a alcanzar al player
+	public float velocidad        = 4f;
+	public float distanciaDetras  = 5f;
+	public float velocidadAlcance = 15f;
+	public float tiempoSeguimiento = 5f;
 
-	// Referencias
 	private Transform player;
-	private bool      activo        = false; // si el enemigo esta visible y siguiendo
-	private bool      alcanzando    = false; // modo game over: va a maxima velocidad
+	private bool      activo           = true;
+	private bool      alcanzando       = false;
 	private float     timerDesaparecer = 0f;
 
 	void Start()
 	{
-		// Buscar al player automaticamente
-		player = FindObjectOfType<Player>().transform;
+		Player p = FindObjectOfType<Player>();
+		if (p != null)
+			player = p.transform;
+		else
+			Debug.LogWarning("No se encontró al Player en la escena.");
 
-		// Empezar invisible
 		gameObject.SetActive(true);
+		activo           = true;
+		timerDesaparecer = tiempoSeguimiento;
 	}
 
 	void Update()
 	{
 		if (!activo || player == null) return;
 
-		// --- Modo alcance (game over) ---
 		if (alcanzando)
 		{
 			MoverHaciaPlayer(velocidadAlcance);
 			return;
 		}
 
-		// --- Modo normal: seguir manteniendo distancia ---
-		// Posicion objetivo: detras del player
 		float xObjetivo = player.position.x - distanciaDetras;
 
-		// Solo avanzar si el enemigo esta mas atras que su posicion objetivo
 		if (transform.position.x < xObjetivo)
-		{
 			MoverHaciaPlayer(velocidad);
-		}
 
-		// --- Temporizador para desaparecer ---
 		if (timerDesaparecer > 0f)
 		{
 			timerDesaparecer -= Time.deltaTime;
-
 			if (timerDesaparecer <= 0f)
 				Desaparecer();
 		}
@@ -55,25 +51,21 @@ public class Enemigo : MonoBehaviour
 
 	void MoverHaciaPlayer(float vel)
 	{
-		// Mover en X hacia el player
 		float nuevaX = Mathf.MoveTowards(
 			transform.position.x,
 			player.position.x,
 			vel * Time.deltaTime
 		);
-
 		transform.position = new Vector3(nuevaX, transform.position.y, transform.position.z);
 	}
 
-	// Llamado desde GameManager: aparecer N segundos y luego irse
 	public void AparecerTemporalmente(float segundos)
 	{
 		gameObject.SetActive(true);
-		activo             = true;
-		alcanzando         = false;
-		timerDesaparecer   = segundos;
+		activo           = true;
+		alcanzando       = false;
+		timerDesaparecer = segundos;
 
-		// Colocarlo detras del player al aparecer
 		if (player != null)
 		{
 			transform.position = new Vector3(
@@ -88,10 +80,9 @@ public class Enemigo : MonoBehaviour
 	{
 		activo = false;
 		gameObject.SetActive(false);
-		Debug.Log("El enemigo desaparecio");
+		Debug.Log("El enemigo desapareció");
 	}
 
-	// Llamado desde GameManager en game over
 	public void AlcanzarJugador()
 	{
 		activo     = true;
@@ -99,7 +90,6 @@ public class Enemigo : MonoBehaviour
 		gameObject.SetActive(true);
 	}
 
-	// Llamado desde GameManager al aumentar dificultad
 	public void AumentarVelocidad(float multiplicador)
 	{
 		velocidad *= multiplicador;
