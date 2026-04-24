@@ -1,0 +1,17 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class HighScoreManagement : MonoBehaviour
+{
+	public float score = 0f;
+	public float scoreText;
+	
+	void Update()
+	{
+		if (FindObjectType<Player>() == null)
+		{
+			return;
+		}
+		score += 1;
+		scoreText.text = score
+	}
