@@ -19,15 +19,25 @@ public class Player : MonoBehaviour
 	public float      cooldownDisparo = 0.3f;
 	public KeyCode    teclaDisparo    = KeyCode.E;
 
+	[Header("Daño")]
+	public float fuerzaKnockback  = 8f;
+	public float tiempoInvencible = 3f;
+
 	private Rigidbody2D rb;
 	private Animator    anim;
 	private float       velocidadActual;
 	private bool        enSuelo      = false;
 	private float       timerDisparo = 0f;
 
-	private static readonly int HashGrounded   = Animator.StringToHash("isGrounded");
-	private static readonly int HashVelocityY  = Animator.StringToHash("velocityY");
-	private static readonly int HashIsShooting = Animator.StringToHash("isShooting");
+	private bool  invencible      = false;
+	private float timerInvencible = 0f;
+	private bool  muerto          = false;
+
+	private static readonly int HashGrounded    = Animator.StringToHash("isGrounded");
+	private static readonly int HashVelocityY   = Animator.StringToHash("velocityY");
+	private static readonly int HashIsShooting  = Animator.StringToHash("isShooting");
+	private static readonly int HashRecibirDano = Animator.StringToHash("RecibirDano");
+	private static readonly int HashMuerte      = Animator.StringToHash("Muerte");
 
 	void Start()
 	{
@@ -38,13 +48,20 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
-		// Aceleracion con tope
+		if (muerto) return;
+
 		velocidadActual = Mathf.Min(
 			velocidadActual + aceleracion * Time.deltaTime,
 			velocidadMaxima
 		);
 
-		// Salto
+		if (invencible)
+		{
+			timerInvencible -= Time.deltaTime;
+			if (timerInvencible <= 0f)
+				invencible = false;
+		}
+
 		if (Input.GetKeyDown(teclaSalto) && enSuelo)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
@@ -52,22 +69,49 @@ public class Player : MonoBehaviour
 			enSuelo = false;
 		}
 
-		// Cooldown de disparo
 		if (timerDisparo > 0f)
 			timerDisparo -= Time.deltaTime;
 
-		// Disparo
 		if (Input.GetKeyDown(teclaDisparo) && timerDisparo <= 0f)
 			Disparar();
 
-		// Animator
 		anim.SetBool (HashGrounded,  enSuelo);
 		anim.SetFloat(HashVelocityY, rb.linearVelocity.y);
 	}
 
 	void FixedUpdate()
 	{
+		if (muerto) return;
 		rb.linearVelocity = new Vector2(velocidadActual, rb.linearVelocity.y);
+	}
+
+	void RecibirGolpe()
+	{
+		if (invencible || muerto) return;
+
+		anim.SetTrigger(HashRecibirDano);
+
+		rb.linearVelocity = Vector2.zero;
+		rb.AddForce(Vector2.left * fuerzaKnockback, ForceMode2D.Impulse);
+
+		invencible      = true;
+		timerInvencible = tiempoInvencible;
+	}
+
+	public void Morir()
+	{
+		if (muerto) return;
+
+		muerto            = true;
+		rb.linearVelocity = Vector2.zero;
+		rb.bodyType       = RigidbodyType2D.Kinematic;
+
+		anim.SetTrigger(HashMuerte);
+
+		if (GameManager.instancia != null)
+			GameManager.instancia.RegistrarFallo();
+		else
+			Debug.LogWarning("No hay GameManager en la escena.");
 	}
 
 	void Disparar()
@@ -83,32 +127,37 @@ public class Player : MonoBehaviour
 			return;
 		}
 
-		Instantiate(prefabBala, puntoDeDisparo.position, Quaternion.identity);
+		Instantiate(prefabBala, puntoDeDisparo.position, puntoDeDisparo.rotation);
 		timerDisparo = cooldownDisparo;
 		anim.SetTrigger(HashIsShooting);
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		// Suelo
 		if (collision.gameObject.CompareTag("Ground"))
 			enSuelo = true;
 
-		// Obstaculo: avisar al GameManager
-		if (collision.gameObject.CompareTag("Obstacle"))
-		{
-			Debug.Log("Chocaste con un obstaculo");
-
-			if (GameManager.instancia != null)
-				GameManager.instancia.RegistrarFallo();
-			else
-				Debug.LogWarning("No hay GameManager en la escena.");
-		}
+		if (collision.gameObject.CompareTag("RecibirDano"))
+			RecibirGolpe();
 	}
 
 	void OnCollisionExit2D(Collision2D collision)
 	{
 		if (collision.gameObject.CompareTag("Ground"))
 			enSuelo = false;
+	}
+
+	public Vector2 GetDirection()
+	{
+		return Vector2.right;
+	}
+
+	void OnEnable()
+	{
+		muerto          = false;
+		invencible      = false;
+		timerInvencible = 0f;
+		velocidadActual = velocidadInicial;
+		if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
 	}
 }

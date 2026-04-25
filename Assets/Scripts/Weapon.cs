@@ -1,16 +1,30 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+	[SerializeField] private Transform pivot;
+	[SerializeField] private GameObject bulletPrefab;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private Player movement;
+
+	private void Awake()
+	{
+		movement = GetComponent<Player>();
+	}
+
+	private void Update()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			Shoot();
+		}
+	}
+
+	public void Shoot()
+	{
+		GameObject bullet = Instantiate(bulletPrefab, pivot.position, Quaternion.identity);
+		bullet.GetComponent<Bullet>().SetDirection(movement.GetDirection());
+	}
 }

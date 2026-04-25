@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6954866397473792288}
   - component: {fileID: 3374250400647969303}
   - component: {fileID: 7252877533404805349}
+  - component: {fileID: -8886940784516957262}
   m_Layer: 3
   m_Name: Obstaculo 1
   m_TagString: Ground
@@ -140,6 +141,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 13.570295, y: 8.2300005}
   m_EdgeRadius: 0
+--- !u!114 &-8886940784516957262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8741989984415613643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
+  tiempoTemblor: 1.2
+  intensidadTemblor: 2
+  velocidadCaida: 3
+  tiempoDestruir: 3
 --- !u!1001 &2926638874669514032
 PrefabInstance:
   m_ObjectHideFlags: 0

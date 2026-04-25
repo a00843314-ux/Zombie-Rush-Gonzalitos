@@ -10,6 +10,7 @@ TagManager:
   - PuntoFinal
   - RecibirDano
   - Enemigo
+  - modena
   layers:
   - Default
   - TransparentFX
