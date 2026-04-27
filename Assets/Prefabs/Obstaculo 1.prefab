@@ -129,7 +129,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.09336853, y: 0.030684471}
   m_SpriteTilingProperty:
     border: {x: 0, y: 6.3100004, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -139,7 +139,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 13.570295, y: 8.2300005}
+  m_Size: {x: 13.383558, y: 8.29137}
   m_EdgeRadius: 0
 --- !u!114 &-8886940784516957262
 MonoBehaviour:
@@ -153,10 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
-  tiempoTemblor: 1.2
-  intensidadTemblor: 2
+  tiempoTemblor: 2
+  intensidadTemblor: 0.03
   velocidadCaida: 3
-  tiempoDestruir: 3
+  tiempoDestruir: 4
 --- !u!1001 &2926638874669514032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,19 +309,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563778253882464093, guid: f816db3b753541345a25207d0e44ae60, type: 3}
       propertyPath: m_Size.x
-      value: 43.790565
+      value: 91.4741
       objectReference: {fileID: 0}
     - target: {fileID: 2563778253882464093, guid: f816db3b753541345a25207d0e44ae60, type: 3}
       propertyPath: m_Size.y
-      value: 37.293224
+      value: 41.578903
       objectReference: {fileID: 0}
     - target: {fileID: 2563778253882464093, guid: f816db3b753541345a25207d0e44ae60, type: 3}
       propertyPath: m_Offset.x
-      value: 4.005993
+      value: -19.835773
       objectReference: {fileID: 0}
     - target: {fileID: 2563778253882464093, guid: f816db3b753541345a25207d0e44ae60, type: 3}
       propertyPath: m_Offset.y
-      value: -6.235964
+      value: -3.3634186
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

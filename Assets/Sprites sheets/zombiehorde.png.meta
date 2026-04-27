@@ -1,0 +1,359 @@
+fileFormatVersion: 2
+guid: 01e19422c5552324c88e3d0a269d3b4e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4537657148583198643
+    second: zombiehorde_0
+  - first:
+      213: 8239387020136379843
+    second: zombiehorde_1
+  - first:
+      213: -5539760195462107873
+    second: zombiehorde_2
+  - first:
+      213: 360927957720831481
+    second: zombiehorde_3
+  - first:
+      213: -6353011723843630155
+    second: zombiehorde_4
+  - first:
+      213: 476515238819384880
+    second: zombiehorde_5
+  - first:
+      213: -4396138197670409391
+    second: zombiehorde_6
+  - first:
+      213: -5979979647832205122
+    second: zombiehorde_7
+  - first:
+      213: 3285369509342902510
+    second: zombiehorde_8
+  - first:
+      213: 6122969820935847731
+    second: zombiehorde_9
+  - first:
+      213: 2807395452684782868
+    second: zombiehorde_10
+  - first:
+      213: 303147939239260465
+    second: zombiehorde_11
+  - first:
+      213: -9100726235914235311
+    second: zombiehorde_12
+  - first:
+      213: 787373664230660327
+    second: zombiehorde_13
+  - first:
+      213: -5940713484665391655
+    second: zombiehorde_14
+  - first:
+      213: 780260469793752521
+    second: zombiehorde_15
+  - first:
+      213: 3245816733656181155
+    second: zombiehorde_16
+  - first:
+      213: 307693740502520612
+    second: zombiehorde_17
+  - first:
+      213: -5888489505353336313
+    second: zombiehorde_18
+  - first:
+      213: 1226781213742328861
+    second: zombiehorde_19
+  - first:
+      213: -880114242888306618
+    second: zombiehorde_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zombiehorde_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 2832
+        height: 1399
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40cf2a6dd00701c0800000000000000
+      internalID: -4537657148583198643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombiehorde_1
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 0
+        width: 2769
+        height: 1408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c5713637de285270800000000000000
+      internalID: 8239387020136379843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombiehorde_2
+      rect:
+        serializedVersion: 2
+        x: 5700
+        y: 0
+        width: 2805
+        height: 1408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1de1a00471de13b0800000000000000
+      internalID: -5539760195462107873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombiehorde_3
+      rect:
+        serializedVersion: 2
+        x: 8531
+        y: 0
+        width: 2769
+        height: 1408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f51575b016420500800000000000000
+      internalID: 360927957720831481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombiehorde_4
+      rect:
+        serializedVersion: 2
+        x: 11326
+        y: 0
+        width: 2763
+        height: 1408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb88623f7195d7a0800000000000000
+      internalID: -6353011723843630155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombiehorde_5
+      rect:
+        serializedVersion: 2
+        x: 14162
+        y: 0
+        width: 2764
+        height: 1408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ec3e3c51cec9600800000000000000
+      internalID: 476515238819384880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombiehorde_6
+      rect:
+        serializedVersion: 2
+        x: 16983
+        y: 0
+        width: 2729
+        height: 1408
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15b4458d997cdf2c0800000000000000
+      internalID: -4396138197670409391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3c36b34d3359a764fafcfc149a890ab0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":7.0},"gridSpriteSize":{"x":6570.0,"y":201.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      zombiehorde_0: -4537657148583198643
+      zombiehorde_1: 8239387020136379843
+      zombiehorde_10: 2807395452684782868
+      zombiehorde_11: 303147939239260465
+      zombiehorde_12: -9100726235914235311
+      zombiehorde_13: 787373664230660327
+      zombiehorde_14: -5940713484665391655
+      zombiehorde_15: 780260469793752521
+      zombiehorde_16: 3245816733656181155
+      zombiehorde_17: 307693740502520612
+      zombiehorde_18: -5888489505353336313
+      zombiehorde_19: 1226781213742328861
+      zombiehorde_2: -5539760195462107873
+      zombiehorde_20: -880114242888306618
+      zombiehorde_3: 360927957720831481
+      zombiehorde_4: -6353011723843630155
+      zombiehorde_5: 476515238819384880
+      zombiehorde_6: -4396138197670409391
+      zombiehorde_7: -5979979647832205122
+      zombiehorde_8: 3285369509342902510
+      zombiehorde_9: 6122969820935847731
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

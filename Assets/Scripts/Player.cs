@@ -10,8 +10,9 @@ public class Player : MonoBehaviour
 	public float velocidadMaxima  = 20f;
 
 	[Header("Salto")]
-	public float   fuerzaSalto = 10f;
-	public KeyCode teclaSalto  = KeyCode.Space;
+	public float   fuerzaSalto  = 10f;
+	public float   tiempoCoyote = 0.15f;
+	public KeyCode teclaSalto   = KeyCode.Space;
 
 	[Header("Disparo")]
 	public GameObject prefabBala;
@@ -22,16 +23,21 @@ public class Player : MonoBehaviour
 	[Header("Daño")]
 	public float fuerzaKnockback  = 8f;
 	public float tiempoInvencible = 3f;
+	public float tiempoSinHitbox  = 2f;
 
 	private Rigidbody2D rb;
 	private Animator    anim;
-	private float       velocidadActual;
-	private bool        enSuelo      = false;
-	private float       timerDisparo = 0f;
+	private Collider2D  colSuelo;
+	private Collider2D  colDano;
 
-	private bool  invencible      = false;
-	private float timerInvencible = 0f;
-	private bool  muerto          = false;
+	private float velocidadActual;
+	private bool  enSuelo           = false;
+	private float timerDisparo      = 0f;
+	private bool  invencible        = false;
+	private float timerInvencible   = 0f;
+	private bool  muerto            = false;
+	private float timerCoyote       = 0f;
+	private bool  puedeSaltarCoyote = false;
 
 	private static readonly int HashGrounded    = Animator.StringToHash("isGrounded");
 	private static readonly int HashVelocityY   = Animator.StringToHash("velocityY");
@@ -41,8 +47,22 @@ public class Player : MonoBehaviour
 
 	void Start()
 	{
-		rb              = GetComponent<Rigidbody2D>();
-		anim            = GetComponent<Animator>();
+		rb   = GetComponent<Rigidbody2D>();
+		anim = GetComponent<Animator>();
+
+		Collider2D[] cols = GetComponents<Collider2D>();
+		if (cols.Length >= 2)
+		{
+			colSuelo = cols[0];
+			colDano  = cols[1];
+		}
+		else
+		{
+			Debug.LogWarning("El jugador necesita dos Collider2D — uno para suelo y uno para daño.");
+			colSuelo = cols[0];
+			colDano  = cols[0];
+		}
+
 		velocidadActual = velocidadInicial;
 	}
 
@@ -62,11 +82,25 @@ public class Player : MonoBehaviour
 				invencible = false;
 		}
 
-		if (Input.GetKeyDown(teclaSalto) && enSuelo)
+		if (enSuelo)
+		{
+			puedeSaltarCoyote = true;
+			timerCoyote       = tiempoCoyote;
+		}
+		else
+		{
+			timerCoyote -= Time.deltaTime;
+			if (timerCoyote <= 0f)
+				puedeSaltarCoyote = false;
+		}
+
+		if (Input.GetKeyDown(teclaSalto) && puedeSaltarCoyote)
 		{
 			rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
 			rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
-			enSuelo = false;
+			puedeSaltarCoyote = false;
+			timerCoyote       = 0f;
+			enSuelo           = false;
 		}
 
 		if (timerDisparo > 0f)
@@ -87,7 +121,9 @@ public class Player : MonoBehaviour
 
 	void RecibirGolpe()
 	{
+		Debug.Log($"RecibirGolpe llamado | invencible: {invencible} | muerto: {muerto}");
 		if (invencible || muerto) return;
+		Debug.Log("Activando animacion RecibirDano");
 
 		anim.SetTrigger(HashRecibirDano);
 
@@ -96,6 +132,15 @@ public class Player : MonoBehaviour
 
 		invencible      = true;
 		timerInvencible = tiempoInvencible;
+
+		colDano.enabled = false;
+		Invoke(nameof(ReactivarHitbox), tiempoSinHitbox);
+	}
+
+	void ReactivarHitbox()
+	{
+		if (!muerto)
+			colDano.enabled = true;
 	}
 
 	public void Morir()
@@ -105,6 +150,8 @@ public class Player : MonoBehaviour
 		muerto            = true;
 		rb.linearVelocity = Vector2.zero;
 		rb.bodyType       = RigidbodyType2D.Kinematic;
+		colSuelo.enabled  = false;
+		colDano.enabled   = false;
 
 		anim.SetTrigger(HashMuerte);
 
@@ -134,6 +181,8 @@ public class Player : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
+		Debug.Log($"Colision con: {collision.gameObject.tag} | colSuelo activo: {colSuelo.enabled} | colDano activo: {colDano.enabled}");
+
 		if (collision.gameObject.CompareTag("Ground"))
 			enSuelo = true;
 
@@ -147,6 +196,13 @@ public class Player : MonoBehaviour
 			enSuelo = false;
 	}
 
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		Debug.Log($"Trigger con: {other.gameObject.tag}");
+		if (other.CompareTag("RecibirDano"))
+			RecibirGolpe();
+	}
+
 	public Vector2 GetDirection()
 	{
 		return Vector2.right;
@@ -154,10 +210,14 @@ public class Player : MonoBehaviour
 
 	void OnEnable()
 	{
-		muerto          = false;
-		invencible      = false;
-		timerInvencible = 0f;
-		velocidadActual = velocidadInicial;
-		if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
+		muerto            = false;
+		invencible        = false;
+		timerInvencible   = 0f;
+		velocidadActual   = velocidadInicial;
+		puedeSaltarCoyote = false;
+		timerCoyote       = 0f;
+		if (rb       != null) rb.bodyType      = RigidbodyType2D.Dynamic;
+		if (colSuelo != null) colSuelo.enabled = true;
+		if (colDano  != null) colDano.enabled  = true;
 	}
 }

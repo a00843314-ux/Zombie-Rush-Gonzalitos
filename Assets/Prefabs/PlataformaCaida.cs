@@ -7,30 +7,30 @@ public class PlataformaCaida : MonoBehaviour
 	public float intensidadTemblor = 0.05f;
 
 	[Header("Caída")]
-	public float velocidadCaida  = 3f;
-	public float tiempoDestruir  = 3f;
+	public float velocidadCaida = 3f;
+	public float tiempoDestruir = 3f;
 
-	private bool    temblando        = false;
-	private bool    cayendo          = false;
-	private float   timerTemblor     = 0f;
-	private float   timerDestruir    = 0f;
-	private Vector3 posicionOriginal;
-	private Vector3 posicionVisualOriginal;
+	private bool        temblando        = false;
+	private bool        cayendo          = false;
+	private float       timerTemblor     = 0f;
+	private float       timerDestruir    = 0f;
+	private Vector3     posicionOriginal;
+	private Vector3     posicionVisualOriginal;
 	private Rigidbody2D rb;
 	private Transform   visual;
+	private bool        tieneVisual      = false;
 
 	void Start()
 	{
 		posicionOriginal = transform.position;
 
-		// Buscar el hijo Visual
 		visual = transform.Find("Visual");
-		if (visual == null)
-			Debug.LogWarning($"{gameObject.name} no tiene un hijo llamado 'Visual'.");
-		else
+		if (visual != null)
+		{
+			tieneVisual            = true;
 			posicionVisualOriginal = visual.localPosition;
+		}
 
-		// Agregar Rigidbody2D si no existe
 		rb = GetComponent<Rigidbody2D>();
 		if (rb == null)
 			rb = gameObject.AddComponent<Rigidbody2D>();
@@ -45,10 +45,19 @@ public class PlataformaCaida : MonoBehaviour
 		{
 			timerTemblor -= Time.deltaTime;
 
-			// Solo mover el visual, no el objeto raíz
-			if (visual != null)
+			if (tieneVisual)
 			{
+				// Solo mueve el visual, el collider queda fijo
 				visual.localPosition = posicionVisualOriginal + new Vector3(
+					Random.Range(-intensidadTemblor, intensidadTemblor),
+					Random.Range(-intensidadTemblor, intensidadTemblor),
+					0f
+				);
+			}
+			else
+			{
+				// Sin Visual mueve todo el objeto
+				transform.position = posicionOriginal + new Vector3(
 					Random.Range(-intensidadTemblor, intensidadTemblor),
 					Random.Range(-intensidadTemblor, intensidadTemblor),
 					0f
@@ -58,8 +67,10 @@ public class PlataformaCaida : MonoBehaviour
 			if (timerTemblor <= 0f)
 			{
 				temblando = false;
-				if (visual != null)
+				if (tieneVisual)
 					visual.localPosition = posicionVisualOriginal;
+				else
+					transform.position = posicionOriginal;
 				Caer();
 			}
 		}
@@ -76,8 +87,8 @@ public class PlataformaCaida : MonoBehaviour
 
 	void Caer()
 	{
-		cayendo        = true;
-		timerDestruir  = tiempoDestruir;
+		cayendo       = true;
+		timerDestruir = tiempoDestruir;
 	}
 
 	void OnCollisionExit2D(Collision2D collision)

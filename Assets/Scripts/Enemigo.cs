@@ -11,6 +11,9 @@ public class Enemigo : MonoBehaviour
 	[Header("Retraso de salto")]
 	public float retrasoSalto = 0.2f;
 
+	[Header("Ajuste visual")]
+	public float offsetY = 0f;
+
 	private Transform player;
 	private bool      activo           = true;
 	private bool      alcanzando       = false;
@@ -19,7 +22,6 @@ public class Enemigo : MonoBehaviour
 	private float[] historialY;
 	private int     indiceHistorial = 0;
 	private int     tamanoHistorial;
-	private float   yBase;
 
 	void Start()
 	{
@@ -29,14 +31,11 @@ public class Enemigo : MonoBehaviour
 		else
 			Debug.LogWarning("No se encontró al Player en la escena.");
 
-		// Calcular cuántos frames necesitamos guardar para el retraso
 		tamanoHistorial = Mathf.Max(1, Mathf.RoundToInt(retrasoSalto / Time.fixedDeltaTime));
 		historialY      = new float[tamanoHistorial];
-		yBase           = transform.position.y;
 
-		// Llenar el historial con la posición Y inicial
 		for (int i = 0; i < tamanoHistorial; i++)
-			historialY[i] = player != null ? player.position.y : yBase;
+			historialY[i] = player != null ? player.position.y : transform.position.y;
 
 		gameObject.SetActive(true);
 		activo           = true;
@@ -47,12 +46,10 @@ public class Enemigo : MonoBehaviour
 	{
 		if (!activo || player == null) return;
 
-		// Guardar posición Y del player en el historial
 		historialY[indiceHistorial] = player.position.y;
 		indiceHistorial = (indiceHistorial + 1) % tamanoHistorial;
 
-		// Leer la Y con retraso (la más antigua del historial)
-		float yRetrasada = historialY[indiceHistorial];
+		float yRetrasada = historialY[indiceHistorial] + offsetY;
 
 		if (alcanzando)
 		{
@@ -61,7 +58,7 @@ public class Enemigo : MonoBehaviour
 		}
 
 		float xObjetivo = player.position.x - distanciaDetras;
-		float nuevaX = Mathf.MoveTowards(transform.position.x, xObjetivo, velocidad * Time.deltaTime);
+		float nuevaX    = Mathf.MoveTowards(transform.position.x, xObjetivo, velocidad * Time.deltaTime);
 
 		transform.position = new Vector3(nuevaX, yRetrasada, transform.position.z);
 
@@ -92,14 +89,14 @@ public class Enemigo : MonoBehaviour
 
 		if (player != null)
 		{
-			transform.position = new Vector3(
-				player.position.x - distanciaDetras,
-				player.position.y,
-				transform.position.z
-			);
-
 			for (int i = 0; i < tamanoHistorial; i++)
 				historialY[i] = player.position.y;
+
+			transform.position = new Vector3(
+				player.position.x - distanciaDetras,
+				player.position.y + offsetY,
+				transform.position.z
+			);
 		}
 	}
 
