@@ -306,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 207336360}
   - component: {fileID: 207336363}
+  - component: {fileID: 207336364}
   - component: {fileID: 207336362}
   - component: {fileID: 207336361}
   m_Layer: 0
@@ -324,7 +325,7 @@ Transform:
   m_GameObject: {fileID: 207336359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: -12.3, z: 101.66304}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 5.9762416, y: 5.9762416, z: 5.9762416}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -396,7 +397,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207336359}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d225affc90e57c345bfaf6acf9716e2d, type: 3}
   m_Name: 
@@ -411,12 +412,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207336359}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bba590c75f10d214096081d45849b3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Paralax
   velocidadParalax: 1
+--- !u!114 &207336364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207336359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c286e19788711d4798432dce143bd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FondoMovimiento
+  VelocidadMovimiento: {x: 0.5, y: 0}
 --- !u!1 &257272909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6956531111933316268, guid: b6c93b2b209f7f047bc788163c05cceb, type: 3}
@@ -537,6 +551,55 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &322906280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322906282}
+  - component: {fileID: 322906281}
+  m_Layer: 0
+  m_Name: PlayerStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &322906281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322906280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cae2e365e50b14abc03c986fe13a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  monedas: 0
+  tieneDobleSalto: 0
+  tieneEscudo: 0
+  saltosRestantes: 1
+  escudoActivo: 0
+--- !u!4 &322906282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322906280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.16623, y: -4.25397, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3536,8 +3599,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2143791175}
-  - component: {fileID: 2143791179}
-  - component: {fileID: 2143791177}
   - component: {fileID: 2143791178}
   - component: {fileID: 2143791176}
   m_Layer: 0
@@ -3556,7 +3617,7 @@ Transform:
   m_GameObject: {fileID: 2143791174}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -5.7, z: 101.66304}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 5.9762416, y: 5.9762416, z: 5.9762416}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3621,21 +3682,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2143791177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143791174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d225affc90e57c345bfaf6acf9716e2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FondoDinamico
-  colorInicial: {r: 0.5, g: 0.7, b: 1, a: 1}
-  colorFinal: {r: 0.05, g: 0.05, b: 0.1, a: 1}
-  tiempoParaOscurecer: 20
 --- !u!114 &2143791178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3648,20 +3694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c286e19788711d4798432dce143bd00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FondoMovimiento
-  VelocidadMovimiento: {x: 1, y: 0}
---- !u!114 &2143791179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143791174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bba590c75f10d214096081d45849b3fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Paralax
-  velocidadParalax: 0.5
+  VelocidadMovimiento: {x: 0.7, y: 0}
 --- !u!1001 &760467480359254589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3814,3 +3847,4 @@ SceneRoots:
   - {fileID: 1000282548}
   - {fileID: 309327020}
   - {fileID: 499893457}
+  - {fileID: 322906282}

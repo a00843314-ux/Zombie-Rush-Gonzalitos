@@ -5,26 +5,23 @@ public class Paralax : MonoBehaviour
 	[Header("Paralax")]
 	public float velocidadParalax = 0.5f;
 
-	private Transform jugador;
-	private float     ultimaPosicionX;
+	private float posInicialX;
+	private Transform camara;
 
 	void Start()
 	{
-		Player p = FindObjectOfType<Player>();
-		if (p != null)
-			jugador = p.transform;
-		else
-			Debug.LogWarning("No se encontró al Player en la escena.");
-
-		ultimaPosicionX = jugador != null ? jugador.position.x : 0f;
+		camara     = Camera.main.transform;
+		posInicialX = transform.position.x;
 	}
 
 	void LateUpdate()
 	{
-		if (jugador == null) return;
+		if (camara == null) return;
 
-		float diferencia    = jugador.position.x - ultimaPosicionX;
-		transform.position += new Vector3(diferencia * velocidadParalax, 0f, 0f);
-		ultimaPosicionX     = jugador.position.x;
+		transform.localPosition = new Vector3(
+			camara.position.x * velocidadParalax * -1f,
+			transform.localPosition.y,
+			transform.localPosition.z
+		);
 	}
 }
