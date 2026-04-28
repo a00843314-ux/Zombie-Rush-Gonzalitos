@@ -2,120 +2,75 @@
 
 public class Enemigo : MonoBehaviour
 {
-	[Header("Seguimiento")]
-	public float velocidad         = 4f;
-	public float distanciaDetras   = 5f;
-	public float velocidadAlcance  = 15f;
-	public float tiempoSeguimiento = 5f;
+	public float velocity = 2f;
+	public float distanciaVision =  5f;
+	public Transform player;
+	public Transform puntoSuelo;
+	public float distanciaSuelo = 0.5f;
+	public LayerMask capaSuelo;
+	
+	private Rigidbody2D	rb;
+	private SpriteRenderer spriteRenderer;
+	private int direccion =1;
+	private float tiempoEspera = 0f;
+	
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+	    rb = GetComponent<Rigidbody2D>();
+	    spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
 
-	[Header("Retraso de salto")]
-	public float retrasoSalto = 0.2f;
-
-	[Header("Ajuste visual")]
-	public float offsetY = 0f;
-
-	private Transform player;
-	private bool      activo           = true;
-	private bool      alcanzando       = false;
-	private float     timerDesaparecer = 0f;
-
-	private float[] historialY;
-	private int     indiceHistorial = 0;
-	private int     tamanoHistorial;
-
-	void Start()
+    // Update is called once per frame
+	void FixedUpdate()
+    {
+	    if (puntoSuelo == null) return;
+	    tiempoEspera -= Time.fixedDeltaTime;
+	    bool haySuelo = Physics2D.Raycast(puntoSuelo.position, Vector2.down, distanciaSuelo, capaSuelo);
+	    
+	    //Sin suelo adelante: voltear (solamente si no acaba de voltear)
+	    if (haySuelo && tiempoEspera <= 0f)
+	    {
+	    	Voltear();
+	    	// Esperar antes de voltear otra vez
+	    	tiempoEspera = 0.3f;
+	    }
+	    
+	    //Si el player está cerca, lo persigue
+	    if(player !=null && Vector2.Distance(transform.position, player.position) <= distanciaVision)
+	    {
+	    	int	nuevaDir = player.position.x > transform.position.x ? 1: -1;
+	    	if (nuevaDir != direccion) Voltear();
+	    }
+	    //Siempre se mueva no se detenga al voltear
+	    {
+	    	rb.linearVelocity = new Vector2(velocity*direccion, rb.linearVelocity.y);
+	    }
+    }
+    
+	void Voltear()
 	{
-		Player p = FindObjectOfType<Player>();
-		if (p != null)
-			player = p.transform;
-		else
-			Debug.LogWarning("No se encontró al Player en la escena.");
-
-		tamanoHistorial = Mathf.Max(1, Mathf.RoundToInt(retrasoSalto / Time.fixedDeltaTime));
-		historialY      = new float[tamanoHistorial];
-
-		for (int i = 0; i < tamanoHistorial; i++)
-			historialY[i] = player != null ? player.position.y : transform.position.y;
-
-		gameObject.SetActive(true);
-		activo           = true;
-		timerDesaparecer = tiempoSeguimiento;
+		direccion *= -1;
+		spriteRenderer.flipX = direccion < 0;
+		
+		Vector3 pos = puntoSuelo.localPosition;
+		pos.x = Mathf.Abs(pos.x) * direccion;
+		puntoSuelo.localPosition = pos;
 	}
-
-	void Update()
+	public void Morir()
 	{
-		if (!activo || player == null) return;
-
-		historialY[indiceHistorial] = player.position.y;
-		indiceHistorial = (indiceHistorial + 1) % tamanoHistorial;
-
-		float yRetrasada = historialY[indiceHistorial] + offsetY;
-
-		if (alcanzando)
+		Destroy(gameObject);
+	}
+	
+	void OnDrawGizmosSelected()
+	{
+		if (puntoSuelo != null)
 		{
-			MoverHaciaPlayer(velocidadAlcance, yRetrasada);
-			return;
+			Gizmos.color = Color.yellow;
+			Gizmos.DrawLine(puntoSuelo.position, puntoSuelo.position + Vector3.down * distanciaSuelo);
 		}
-
-		float xObjetivo = player.position.x - distanciaDetras;
-		float nuevaX    = Mathf.MoveTowards(transform.position.x, xObjetivo, velocidad * Time.deltaTime);
-
-		transform.position = new Vector3(nuevaX, yRetrasada, transform.position.z);
-
-		if (timerDesaparecer > 0f)
-		{
-			timerDesaparecer -= Time.deltaTime;
-			if (timerDesaparecer <= 0f)
-				Desaparecer();
-		}
-	}
-
-	void MoverHaciaPlayer(float vel, float yRetrasada)
-	{
-		float nuevaX = Mathf.MoveTowards(
-			transform.position.x,
-			player.position.x,
-			vel * Time.deltaTime
-		);
-		transform.position = new Vector3(nuevaX, yRetrasada, transform.position.z);
-	}
-
-	public void AparecerTemporalmente(float segundos)
-	{
-		gameObject.SetActive(true);
-		activo           = true;
-		alcanzando       = false;
-		timerDesaparecer = segundos;
-
-		if (player != null)
-		{
-			for (int i = 0; i < tamanoHistorial; i++)
-				historialY[i] = player.position.y;
-
-			transform.position = new Vector3(
-				player.position.x - distanciaDetras,
-				player.position.y + offsetY,
-				transform.position.z
-			);
-		}
-	}
-
-	void Desaparecer()
-	{
-		activo = false;
-		gameObject.SetActive(false);
-		Debug.Log("El enemigo desapareció");
-	}
-
-	public void AlcanzarJugador()
-	{
-		activo     = true;
-		alcanzando = true;
-		gameObject.SetActive(true);
-	}
-
-	public void AumentarVelocidad(float multiplicador)
-	{
-		velocidad *= multiplicador;
+		
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, distanciaVision);
 	}
 }
