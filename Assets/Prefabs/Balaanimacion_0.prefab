@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 9087191598866149010}
   - component: {fileID: 922633765185970878}
+  - component: {fileID: 7912359666629682737}
   - component: {fileID: 8698603744181004222}
   - component: {fileID: 5166007486300616490}
-  - component: {fileID: 7077110318093131513}
   m_Layer: 0
   m_Name: Balaanimacion_0
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &7912359666629682737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917933224834254733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42511c2a9069ec349b8dd4cd33da80fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  speed: 15
 --- !u!61 &8698603744181004222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +137,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -167,19 +180,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &7077110318093131513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917933224834254733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2ca09358870596468601287a5c4a3e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bala
-  velocidad: 5
-  tiempoDeVida: 5
-  danio: 10
-  prefabImpacto: {fileID: 0}

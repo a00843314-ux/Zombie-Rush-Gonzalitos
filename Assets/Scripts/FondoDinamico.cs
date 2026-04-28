@@ -2,60 +2,51 @@
 
 public class FondoDinamico : MonoBehaviour
 {
-	[Header("Parallax")]
-	public float velocidadParallax = 0.05f;
+	[Header("Colores")]
+	public Color colorInicial = new Color(0.5f, 0.7f, 1f);
+	public Color colorFinal   = new Color(0.05f, 0.05f, 0.1f);
 
-	[Header("Oscurecimiento")]
-	public float tiempoParaOscurecer = 5f;
-	// Arrastra aquí un GameObject con SpriteRenderer negro,
-	// mismo tamaño que el fondo, Order in Layer = fondo + 1
-	public SpriteRenderer overlayNegro;
+	[Header("Configuracion")]
+	public float tiempoParaOscurecer = 120f;
 
 	private SpriteRenderer sr;
-	private Material       mat;
-	private float          timerJuego = 0f;
-	private float          offsetX    = 0f;
+	private float          timerJuego  = 0f;
+	private bool           oscureciendo = true;
 
 	void Start()
 	{
 		sr = GetComponent<SpriteRenderer>();
 		if (sr == null)
-		{
-			Debug.LogWarning("FondoDinamico necesita un SpriteRenderer.");
-			return;
-		}
+			Debug.LogWarning("FondoDinamico necesita un SpriteRenderer en el mismo objeto.");
 
-		mat = sr.material;
-
-		if (overlayNegro != null)
-			overlayNegro.color = new Color(0f, 0f, 0f, 0f);
+		sr.color = colorInicial;
 	}
 
 	void Update()
 	{
-		if (mat == null) return;
-
-		// --- Parallax ---
-		offsetX += velocidadParallax * Time.deltaTime;
-		mat.mainTextureOffset = new Vector2(offsetX, 0f);
-
-		// --- Oscurecimiento via overlay ---
-		if (overlayNegro == null) return;
+		if (sr == null) return;
 
 		timerJuego += Time.deltaTime;
+
 		float t = Mathf.Clamp01(timerJuego / tiempoParaOscurecer);
-		overlayNegro.color = new Color(0f, 0f, 0f, t);
+
+		if (oscureciendo)
+			sr.color = Color.Lerp(colorInicial, colorFinal, t);
+		else
+			sr.color = Color.Lerp(colorFinal, colorInicial, t);
+
+		if (t >= 1f)
+		{
+			oscureciendo = !oscureciendo;
+			timerJuego   = 0f;
+		}
 	}
 
 	public void Resetear()
 	{
-		timerJuego = 0f;
-		offsetX    = 0f;
-
-		if (mat != null)
-			mat.mainTextureOffset = Vector2.zero;
-
-		if (overlayNegro != null)
-			overlayNegro.color = new Color(0f, 0f, 0f, 0f);
+		timerJuego   = 0f;
+		oscureciendo = true;
+		if (sr != null)
+			sr.color = colorInicial;
 	}
 }

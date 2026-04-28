@@ -11,6 +11,8 @@ TagManager:
   - RecibirDano
   - Enemigo
   - modena
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX

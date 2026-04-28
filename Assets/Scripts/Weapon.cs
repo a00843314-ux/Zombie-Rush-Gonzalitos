@@ -7,24 +7,24 @@ public class Weapon : MonoBehaviour
 	[SerializeField] private Transform pivot;
 	[SerializeField] private GameObject bulletPrefab;
 
-	private Player movement;
+	private Player playerController;
 
 	private void Awake()
 	{
-		movement = GetComponent<Player>();
+		playerController = GetComponent<Player>();
 	}
 
 	private void Update()
 	{
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0)) // <-- estaba mal escrito
 		{
-			Shoot();
+			Shoot(); // <-- estaba en minúscula
 		}
 	}
 
 	public void Shoot()
 	{
 		GameObject bullet = Instantiate(bulletPrefab, pivot.position, Quaternion.identity);
-		bullet.GetComponent<Bullet>().SetDirection(movement.GetDirection());
+		bullet.GetComponent<Bullet>().SetDirection(playerController.GetDirection());
 	}
 }
