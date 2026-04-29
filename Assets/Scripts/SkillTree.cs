@@ -2,19 +2,19 @@
 using UnityEngine.UI;
 using TMPro;
 
-public class SkillTreeUI : MonoBehaviour
+public class SkillTree : MonoBehaviour
 {
 	[Header("UI Monedas")]
 	public TextMeshProUGUI textoMonedas;
 
 	[Header("Doble Salto")]
-	public Button  botonDobleSalto;
-	public int     costoDobleSalto = 10;
+	public Button          botonDobleSalto;
+	public int             costoDobleSalto = 10;
 	public TextMeshProUGUI textoDobleSalto;
 
 	[Header("Escudo")]
-	public Button  botonEscudo;
-	public int     costoEscudo = 15;
+	public Button          botonEscudo;
+	public int             costoEscudo = 15;
 	public TextMeshProUGUI textoEscudo;
 
 	void Start()
@@ -30,14 +30,12 @@ public class SkillTreeUI : MonoBehaviour
 
 		textoMonedas.text = $"Monedas: {PlayerStats.instancia.monedas}";
 
-		// Doble salto
 		bool tieneDobleSalto = PlayerStats.instancia.tieneDobleSalto;
 		botonDobleSalto.interactable = !tieneDobleSalto;
 		textoDobleSalto.text = tieneDobleSalto
 			? "✓ Comprado"
 			: $"Doble Salto\n{costoDobleSalto} monedas";
 
-		// Escudo
 		bool tieneEscudo = PlayerStats.instancia.tieneEscudo;
 		botonEscudo.interactable = !tieneEscudo;
 		textoEscudo.text = tieneEscudo
@@ -47,22 +45,24 @@ public class SkillTreeUI : MonoBehaviour
 
 	void ComprarDobleSalto()
 	{
-		if (PlayerStats.instancia.GastarMonedas(costoDobleSalto))
+		/*if (PlayerStats.instancia.GastarMonedas(costoDobleSalto))
 		{
 			PlayerStats.instancia.tieneDobleSalto = true;
 			ActualizarUI();
 		}
-		else Debug.Log("No hay monedas suficientes.");
+		else
+		Debug.Log("No hay monedas suficientes.");*/
 	}
 
 	void ComprarEscudo()
 	{
-		if (PlayerStats.instancia.GastarMonedas(costoEscudo))
+		/*if (PlayerStats.instancia.GastarMonedas(costoEscudo))
 		{
-			PlayerStats.instancia.tieneEscudo   = true;
-			PlayerStats.instancia.escudoActivo  = true;
+			PlayerStats.instancia.tieneEscudo  = true;
+			PlayerStats.instancia.escudoActivo = true;
 			ActualizarUI();
 		}
-		else Debug.Log("No hay monedas suficientes.");
+		else
+		Debug.Log("No hay monedas suficientes.");*/
 	}
 }

@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 647460108452729895}
   - component: {fileID: -750776657445308730}
+  - component: {fileID: 6013850400291071038}
   m_Layer: 0
   m_Name: Nivel 2
   m_TagString: Ground
@@ -267,6 +268,20 @@ MonoBehaviour:
   intensidadTemblor: 3
   velocidadCaida: 3
   tiempoDestruir: 3
+--- !u!114 &6013850400291071038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646113449926679152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c7d840925e5a249ac25c1a5f20df61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoverNivelIzquierda
+  velocidad: 5
+  limiteIzquierdo: -15
 --- !u!1 &8541225942296201173
 GameObject:
   m_ObjectHideFlags: 0

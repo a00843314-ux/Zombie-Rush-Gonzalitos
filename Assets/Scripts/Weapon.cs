@@ -1,30 +1,94 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+ 
 public class Weapon : MonoBehaviour
+
 {
+
 	[SerializeField] private Transform pivot;
+
 	[SerializeField] private GameObject bulletPrefab;
-
+ 
 	private Player playerController;
-
+ 
 	private void Awake()
-	{
-		playerController = GetComponent<Player>();
-	}
 
+	{
+
+		playerController = GetComponentInParent<Player>();
+
+	}
+ 
 	private void Update()
+
 	{
-		if (Input.GetMouseButtonDown(0)) // <-- estaba mal escrito
+
+		if (Input.GetMouseButtonDown(0))
+
 		{
-			Shoot(); // <-- estaba en minúscula
+
+			Shoot();
+
 		}
+
+	}
+ 
+	public void Shoot()
+
+	{
+
+		if (bulletPrefab == null)
+
+		{
+
+			Debug.LogWarning("Falta asignar Bullet Prefab en Weapon.");
+
+			return;
+
+		}
+ 
+		if (pivot == null)
+
+		{
+
+			Debug.LogWarning("Falta asignar Pivot en Weapon.");
+
+			return;
+
+		}
+ 
+		if (playerController == null)
+
+		{
+
+			Debug.LogWarning("No se encontró el componente Player.");
+
+			return;
+
+		}
+ 
+		playerController.AnimarDisparo();
+ 
+		GameObject bullet = Instantiate(
+
+			bulletPrefab,
+
+			pivot.position,
+
+			Quaternion.identity
+
+		);
+ 
+		Bullet bulletScript = bullet.GetComponent<Bullet>();
+ 
+		if (bulletScript != null)
+
+		{
+
+			bulletScript.SetDirection(playerController.GetDirection());
+
+		}
+
 	}
 
-	public void Shoot()
-	{
-		GameObject bullet = Instantiate(bulletPrefab, pivot.position, Quaternion.identity);
-		bullet.GetComponent<Bullet>().SetDirection(playerController.GetDirection());
-	}
 }
+ 

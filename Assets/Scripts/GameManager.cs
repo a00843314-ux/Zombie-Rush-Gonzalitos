@@ -59,12 +59,12 @@ public class GameManager : MonoBehaviour
 	void AumentarVelocidad()
 	{
 		// Busca el Player y multiplica su velocidad maxima
-		Player player = FindObjectOfType<Player>();
+		/*Player player = FindObjectOfType<Player>();
 		if (player != null)
 		{
 			player.velocidadMaxima  *= multiplicadorVelocidad;
 			player.velocidadInicial *= multiplicadorVelocidad;
-		}
+		}*/
 
 		// También acelera al enemigo
 		if (enemigo != null)

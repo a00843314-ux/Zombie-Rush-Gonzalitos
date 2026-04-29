@@ -13,6 +13,8 @@ TagManager:
   - modena
   - Bullet
   - Enemy
+  - KillerZone
+  - TextoMonedas
   layers:
   - Default
   - TransparentFX
