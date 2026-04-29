@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Enemigo : MonoBehaviour
+public class EnemigoChico : MonoBehaviour
 {
 	public float velocity = 2f;
 	public float distanciaVision =  5f;
