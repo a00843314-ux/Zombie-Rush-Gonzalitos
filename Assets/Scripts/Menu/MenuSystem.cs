@@ -11,6 +11,16 @@ public class MenuSystem : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 
+	public void IrATienda()
+	{
+		SceneManager.LoadScene("Tienda");
+	}
+
+	public void IrAMenu()
+	{
+		SceneManager.LoadScene("Menu"); // cambia por el nombre exacto de tu escena de menú
+	}
+
 	public void Salir()
 	{
 		Debug.Log("Saliendo del Juego...");
