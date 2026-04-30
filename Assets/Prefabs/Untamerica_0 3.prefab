@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019a8ffd89ad24041befbbfbd6512f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  vida: 10
+  vida: 6
 --- !u!212 &6775056628055557049
 SpriteRenderer:
   serializedVersion: 2
