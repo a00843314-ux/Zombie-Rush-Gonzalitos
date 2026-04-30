@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2850180795910995754}
   - component: {fileID: 4380953993068104330}
-  - component: {fileID: 5604062199547124759}
   - component: {fileID: 1886379684297588652}
   m_Layer: 3
   m_Name: Obstaculo 2.1
-  m_TagString: RecibirDano
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,22 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5604062199547124759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8101475712680071723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
-  tiempoTemblor: 2
-  intensidadTemblor: 0.03
-  velocidadCaida: 3
-  tiempoDestruir: 3
 --- !u!61 &1886379684297588652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -240,37 +223,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 351250965999006346, guid: f816db3b753541345a25207d0e44ae60, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 3936393613573614762}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f816db3b753541345a25207d0e44ae60, type: 3}
 --- !u!4 &4024921023611001445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
   m_PrefabInstance: {fileID: 3691916418861887517}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4027263188672430743 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 351250965999006346, guid: f816db3b753541345a25207d0e44ae60, type: 3}
-  m_PrefabInstance: {fileID: 3691916418861887517}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3936393613573614762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4027263188672430743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
-  tiempoTemblor: 2
-  intensidadTemblor: 0.03
-  velocidadCaida: 3
-  tiempoDestruir: 3
 --- !u!1001 &5647669323064404186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -359,7 +318,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 9.01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3418467396150367432, guid: a61477c55e0e1e64b8c46511e10245f8, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4663967895017439869, guid: a61477c55e0e1e64b8c46511e10245f8, type: 3}
     m_AddedGameObjects: []

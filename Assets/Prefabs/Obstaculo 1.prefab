@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6954866397473792288}
   - component: {fileID: 3374250400647969303}
   - component: {fileID: 7252877533404805349}
-  - component: {fileID: -8886940784516957262}
   m_Layer: 3
   m_Name: Obstaculo 1
   m_TagString: Ground
@@ -34,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 8446814597034457845}
   - {fileID: 5271398038782912112}
+  - {fileID: 8503829438919648916}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3374250400647969303
@@ -141,22 +141,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 13.383558, y: 8.29137}
   m_EdgeRadius: 0
---- !u!114 &-8886940784516957262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8741989984415613643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
-  tiempoTemblor: 2
-  intensidadTemblor: 0.03
-  velocidadCaida: 3
-  tiempoDestruir: 4
 --- !u!1001 &2926638874669514032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2453521610917703684, guid: 65ee4ed7cd5ea8b448c207cc6ba835b1, type: 3}
       propertyPath: m_TagString
-      value: RecibirDano
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6747693598056433605, guid: 65ee4ed7cd5ea8b448c207cc6ba835b1, type: 3}
       propertyPath: m_LocalScale.x
@@ -332,4 +316,94 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
   m_PrefabInstance: {fileID: 5602744717683756040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8278915623006014700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6954866397473792288}
+    m_Modifications:
+    - target: {fileID: 351250965999006346, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_Name
+      value: WhatsApp Image 2026-04-14 at 6.47.19 PM_0 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.064589545
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.07024113
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalScale.z
+      value: -0.07024113
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.086074
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563778253882464093, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_Size.x
+      value: 49.859993
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563778253882464093, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5446644
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563778253882464093, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_Offset.x
+      value: 4.3172874
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563778253882464093, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+      propertyPath: m_Offset.y
+      value: -27.35331
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+--- !u!4 &8503829438919648916 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 353310695085058680, guid: f816db3b753541345a25207d0e44ae60, type: 3}
+  m_PrefabInstance: {fileID: 8278915623006014700}
   m_PrefabAsset: {fileID: 0}

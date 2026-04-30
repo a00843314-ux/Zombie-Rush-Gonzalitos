@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6071697440699997194}
   m_Layer: 0
   m_Name: CarroverdeZR_0
-  m_TagString: RecibirDano
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,7 +242,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstaculo 1 Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8886940784516957262, guid: d70ced9bd0f2cef4fa1e7e9e70dac7a2, type: 3}
     m_RemovedGameObjects:
     - {fileID: 761436451286551860, guid: d70ced9bd0f2cef4fa1e7e9e70dac7a2, type: 3}
     m_AddedGameObjects:

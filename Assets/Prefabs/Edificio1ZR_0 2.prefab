@@ -140,7 +140,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: -675305824481465884, guid: 962ac030baba9e04c9685f66ffc9dbb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 24.505983, y: 10.93}
@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de03359cb6ed3448bc0adaf0f7e9a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KillerZone
+  nombreEscenaMuerte: Muerte
 --- !u!1001 &777284020069682116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -962,6 +963,10 @@ PrefabInstance:
     - target: {fileID: 645346170317801287, guid: 22ac080bc54836c41b8e57cc6dcdb4e0, type: 3}
       propertyPath: m_Name
       value: CarroverdeZR_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017052119314481164, guid: 22ac080bc54836c41b8e57cc6dcdb4e0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8294010205504156433, guid: 22ac080bc54836c41b8e57cc6dcdb4e0, type: 3}
       propertyPath: m_LocalScale.x

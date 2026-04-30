@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de03359cb6ed3448bc0adaf0f7e9a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KillerZone
+  nombreEscenaMuerte: Muerte
 --- !u!1 &4646113449926679152
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +314,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 647460108452729895}
-  - component: {fileID: -750776657445308730}
   - component: {fileID: 5315593522904763144}
   m_Layer: 0
   m_Name: Nivel 3
@@ -366,22 +366,6 @@ Transform:
   - {fileID: 3546977314741666324}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-750776657445308730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646113449926679152}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
-  tiempoTemblor: 6
-  intensidadTemblor: 3
-  velocidadCaida: 3
-  tiempoDestruir: 3
 --- !u!114 &5315593522904763144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,32 +979,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4772766061599236461, guid: 33f4e5c67ce9ce9498400bb7211dae46, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3435423665588043227}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9215663533677288540, guid: 33f4e5c67ce9ce9498400bb7211dae46, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 6304369800100699622}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33f4e5c67ce9ce9498400bb7211dae46, type: 3}
---- !u!1 &6678082937840688583 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9215663533677288540, guid: 33f4e5c67ce9ce9498400bb7211dae46, type: 3}
-  m_PrefabInstance: {fileID: 2542787923725271451}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6304369800100699622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6678082937840688583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
-  tiempoTemblor: 2
-  intensidadTemblor: 0.03
-  velocidadCaida: 3
-  tiempoDestruir: 3
 --- !u!4 &7022670199994573046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4772766061599236461, guid: 33f4e5c67ce9ce9498400bb7211dae46, type: 3}

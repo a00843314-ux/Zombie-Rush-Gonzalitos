@@ -222,7 +222,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 647460108452729895}
-  - component: {fileID: -750776657445308730}
   - component: {fileID: -5771460663754782204}
   m_Layer: 0
   m_Name: Nivel1
@@ -261,22 +260,6 @@ Transform:
   - {fileID: 4849908190226094102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-750776657445308730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646113449926679152}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
-  tiempoTemblor: 4.5
-  intensidadTemblor: 0.01
-  velocidadCaida: 3
-  tiempoDestruir: 3
 --- !u!114 &-5771460663754782204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,7 +723,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7456811853806404016, guid: 77e9f27a69f0e3547a9123524311df5c, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5459716545463345496, guid: 77e9f27a69f0e3547a9123524311df5c, type: 3}
     - {fileID: 1833143349910295334, guid: 77e9f27a69f0e3547a9123524311df5c, type: 3}

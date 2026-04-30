@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de03359cb6ed3448bc0adaf0f7e9a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KillerZone
+  nombreEscenaMuerte: Muerte
 --- !u!1 &2466749314900962048
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +314,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 647460108452729895}
-  - component: {fileID: -750776657445308730}
   - component: {fileID: 4328930065921130894}
   m_Layer: 0
   m_Name: Nivel 4
@@ -374,22 +374,6 @@ Transform:
   - {fileID: 3908361240531526843}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-750776657445308730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646113449926679152}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab47e17ffb4e02b45b9a9ee524b9af03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlataformaCaida
-  tiempoTemblor: 4.5
-  intensidadTemblor: 0.01
-  velocidadCaida: 3
-  tiempoDestruir: 3
 --- !u!114 &4328930065921130894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puentepolla Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4779394234703452696, guid: 7ee596f219927ab4cae787dc1d970c46, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7416488357612117513, guid: 7ee596f219927ab4cae787dc1d970c46, type: 3}
       propertyPath: m_LocalPosition.x
       value: 58.321007
@@ -1825,11 +1813,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 982521016088262917, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+      propertyPath: m_Size.x
+      value: 34.994118
+      objectReference: {fileID: 0}
+    - target: {fileID: 982521016088262917, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7803507
+      objectReference: {fileID: 0}
+    - target: {fileID: 982521016088262917, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+      propertyPath: m_Offset.x
+      value: 9.995884
+      objectReference: {fileID: 0}
+    - target: {fileID: 982521016088262917, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+      propertyPath: m_Offset.y
+      value: -11.608238
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085516742179865632, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085516742179865632, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.712
+      objectReference: {fileID: 0}
     - target: {fileID: 4646113449926679152, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
       propertyPath: m_Name
       value: Nivel 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8643116478101235522, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643116478101235522, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.92
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -750776657445308730, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
+    - {fileID: 6304369800100699622, guid: 7697fb09b79581a4a96da51727e35a80, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
